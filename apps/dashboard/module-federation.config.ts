@@ -14,6 +14,14 @@ const config: ModuleFederationConfig = {
    * declare module 'my-external-remote';
    *
    */
+  shared: (_, sharedConfig)=>{
+    return {
+      ...sharedConfig,
+      singleton:true,
+      strictVersion:false,
+      requiredVersion:'auto',
+    }
+  },
 };
 
 /**

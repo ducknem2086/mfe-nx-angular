@@ -5,7 +5,10 @@ import { CommonModule } from '@angular/common';
   selector: 'ng-mf-nx-welcome',
   imports: [CommonModule],
   template: `
+    <div>
     <h1>app root work !</h1>
+    </div>
+
   `,
   styles: [],
   encapsulation: ViewEncapsulation.None,
