@@ -1,36 +1,20 @@
-import { Errors, Field } from './store.interfaces';
 import { formsActions } from './store.actions';
 import { createFeature, createReducer, on } from '@ngrx/store';
+import { Field } from "./store.interfaces";
 
-export interface NgrxFormsState {
-  data: any;
-  structure: Field[];
-  valid: boolean;
-  errors: Errors;
-  touched: boolean;
-}
 
-export const ngrxFormsInitialState: NgrxFormsState = {
-  data: {},
-  structure: [],
-  valid: true,
-  errors: {},
-  touched: false,
+export const ngrxFormsInitialState: Field = {
+  i18nData: 'vi'
 };
 
 export const ngrxFormsFeature = createFeature({
   name: 'ngrxForms',
   reducer: createReducer(
     ngrxFormsInitialState,
-    on(formsActions.setData, (state, action) => ({ ...state, data: action.data })),
-    on(formsActions.updateData, (state, action) => {
-      const data = { ...state.data, ...action.data };
-      return { ...state, data, touched: true };
+    on(formsActions.setI18nData, (state, action) => ({...state, data: action.data})),
+    on(formsActions.updateI18nData, (state, action) => {
+      state.i18nData = action.data
+      return {...state};
     }),
-    on(formsActions.setStructure, (state, action) => ({ ...state, structure: action.structure.slice(0) })),
-    on(formsActions.setErrors, (state, action) => ({ ...state, errors: action.errors })),
-    on(formsActions.initializeErrors, (state) => ({ ...state, errors: {} })),
-    on(formsActions.initializeForm, () => ngrxFormsInitialState),
-    on(formsActions.resetForm, (state) => ({ ...state, touched: false })),
   ),
 });
