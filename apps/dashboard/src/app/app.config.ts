@@ -9,11 +9,11 @@ import { provideRouter } from '@angular/router';
 import { appRoutes } from './app.routes';
 import { HttpClient, provideHttpClient } from '@angular/common/http';
 import { GlobalErrorHandler } from '../error-handler';
-import { provideStore } from '@ngrx/store';
+import { provideState, provideStore } from '@ngrx/store';
 import { provideEffects } from '@ngrx/effects';
-import { ngrxFormsEffects, ngrxFormsFeature } from '../shared/store/index';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { ngrxFormsFeature } from '../shared/store';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '/i18n/', '.json');
@@ -35,10 +35,9 @@ export const appConfig: ApplicationConfig = {
         },
       }),
     ]),
-    provideStore({
-      ngrxForms: ngrxFormsFeature.reducer,
-    }),
-    provideEffects(ngrxFormsEffects),
+    provideStore(),
+    provideEffects(),
+    provideState(ngrxFormsFeature),
     provideBrowserGlobalErrorListeners(),
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(appRoutes),

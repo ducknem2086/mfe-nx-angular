@@ -1,9 +1,8 @@
 import { props, createActionGroup, emptyProps } from '@ngrx/store';
 
 export const formsActions = createActionGroup({
-  source: 'Forms',
+  source: 'i18n',
   events: {
-    setI18nData: props<{ data: any }>(),
-    updateI18nData: props<{ data: any }>(),
+    setI18nData: props<{ status: 'en'|'vi' }>(),
   },
 });

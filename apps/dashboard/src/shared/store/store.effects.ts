@@ -5,7 +5,7 @@ import { formsActions } from './store.actions';
 export const setData$ = createEffect(
   (actions$ = inject(Actions)) => {
     return actions$.pipe(
-      ofType(formsActions.setI18nData, formsActions.updateI18nData),
+      ofType(formsActions.setI18nData),
     );
   },
   { functional: true },
