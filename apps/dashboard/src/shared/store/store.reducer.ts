@@ -14,7 +14,6 @@ export const ngrxFormsFeature = createFeature({
       console.log(action)
       return {
         ...state,
-
         i18nData: action.status
       }
     })

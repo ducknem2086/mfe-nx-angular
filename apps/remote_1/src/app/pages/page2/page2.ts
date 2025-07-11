@@ -2,6 +2,7 @@ import { Component, effect, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateService } from '@ngx-translate/core';
 import { Store } from '@ngrx/store';
+import { formsActions, ngrxFormsFeature } from "../../../../../dashboard/src/shared/store";
 
 @Component({
   selector: 'app-page2',
@@ -9,6 +10,7 @@ import { Store } from '@ngrx/store';
   templateUrl: './page2.html',
   styleUrl: './page2.css',
 
+  standalone: true
 })
 export class Page2 {
 

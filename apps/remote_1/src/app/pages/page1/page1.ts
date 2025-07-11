@@ -7,5 +7,6 @@ import { TranslatePipe } from '@ngx-translate/core';
   imports: [CommonModule, TranslatePipe],
   templateUrl: './page1.html',
   styleUrl: './page1.css',
+  standalone: true
 })
 export class Page1 {}

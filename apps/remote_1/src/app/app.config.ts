@@ -12,6 +12,7 @@ export const appConfig: ApplicationConfig = {
     importProvidersFrom([
       TranslateModule
     ]),
+
     provideBrowserGlobalErrorListeners(),
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(appRoutes),
