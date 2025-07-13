@@ -1,10 +1,19 @@
-import { ModuleFederationConfig } from '@nx/module-federation';
+import { ModuleFederationConfig, sharePackages } from '@nx/module-federation';
 
 const config: ModuleFederationConfig = {
   name: 'remote_1',
   exposes: {
-    './Route': 'apps/remote_1/src/app/app.routes.ts',
+    './Route': 'apps/remote_1/src/app/app.routes.ts'
   },
+  shared: (name: string, sharedConfig) => {
+    return {
+      ...sharedConfig,
+      singleton: true,
+      strictVersion: false,
+      requiredVersion: 'auto',
+      eager: true
+    };
+  }
 };
 
 /**

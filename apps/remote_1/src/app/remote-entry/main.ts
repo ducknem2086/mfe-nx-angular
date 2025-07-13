@@ -1,9 +1,10 @@
-import { Component } from "@angular/core";
-import { ActivatedRoute, Router, RouterOutlet } from "@angular/router";
+import { Component, DOCUMENT, Inject, inject } from '@angular/core';
+import { Router, RouterOutlet } from '@angular/router';
+import { Store } from '@ngrx/store';
 
 @Component({
 
-  selector: "app-remote-1",
+  selector: 'app-remote-1',
   template: `
     <div class="btn-group">
       <button (click)="navigatePageGroup('page1')">
@@ -25,15 +26,19 @@ import { ActivatedRoute, Router, RouterOutlet } from "@angular/router";
   `,
 
   imports: [RouterOutlet],
-
+  standalone: true
 })
 
 export class Remote1Component {
-  constructor(private router: Router, private route: ActivatedRoute) {
+  readonly router = inject(Router);
+  readonly store = inject(Store);
+
+  constructor(@Inject(DOCUMENT) private document: Document) {
+    console.log(this.document.location.origin);
   }
 
   navigatePageGroup(prefix: string) {
-    console.log(this.router.url)
+    console.log(this.router.url);
     // Lấy URL hiện tại, ví dụ "/route-1/page2"
     const currentUrl = this.router.url;
     // Tách chuỗi tại dấu "/", kết quả ["", "route-1", "page2"]

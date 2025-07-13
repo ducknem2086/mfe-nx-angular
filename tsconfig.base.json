@@ -15,8 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "remote_1/Routes": ["apps/remote_1/src/app/remote-entry/entry.routes.ts"],
-      "@dashboard": ["apps/dashboard"]
+      "@dashboard": ["apps/dashboard"],
+      "@ng-mf/translate": ["libs/translate/src/index.ts"],
+      "remote_1/Routes": ["apps/remote_1/src/app/remote-entry/entry.routes.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

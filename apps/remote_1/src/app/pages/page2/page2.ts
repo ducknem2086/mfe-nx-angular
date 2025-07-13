@@ -1,12 +1,12 @@
 import { Component, effect, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { Store } from '@ngrx/store';
-import { formsActions, ngrxFormsFeature } from "../../../../../dashboard/src/shared/store";
+import { formsActions, ngrxFormsFeature } from '@ng-mf/translate';
 
 @Component({
   selector: 'app-page2',
-  imports: [CommonModule],
+  imports: [CommonModule, TranslatePipe],
   templateUrl: './page2.html',
   styleUrl: './page2.css',
 
@@ -23,7 +23,7 @@ export class Page2 {
   constructor() {
     this.setI18nStatusData(false);
 
-    this.translate.setDefaultLang('en')
+    this.translate.setDefaultLang('en');
     effect(() => {
       this.translate.use(this.i18nStatus());
     });
@@ -32,7 +32,7 @@ export class Page2 {
   setI18nStatusData(status: boolean) {
     this.store.dispatch(
       formsActions.setI18nData({
-        status: status ? 'vi' : 'en',
+        status: status ? 'vi' : 'en'
       })
     );
   }
