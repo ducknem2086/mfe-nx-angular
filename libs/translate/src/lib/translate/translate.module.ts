@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { provideState, provideStore } from '@ngrx/store';
-import { ngrxFormsFeature } from './store';
+import { ngrxFormsFeature } from './store/config';
 import { provideEffects } from '@ngrx/effects';
 
 
@@ -12,8 +12,6 @@ import { provideEffects } from '@ngrx/effects';
     provideState(ngrxFormsFeature),
     provideEffects()
   ]
-
-
 })
 export class TranslateLibModule {
 }

@@ -17,7 +17,8 @@
     "paths": {
       "@dashboard": ["apps/dashboard"],
       "@ng-mf/translate": ["libs/translate/src/index.ts"],
-      "remote_1/Routes": ["apps/remote_1/src/app/remote-entry/entry.routes.ts"]
+      "remote_1/Routes": ["apps/remote_1/src/app/remote-entry/entry.routes.ts"],
+      "remote_2/Routes": ["apps/remote_2/src/app/remote-entry/entry.routes.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

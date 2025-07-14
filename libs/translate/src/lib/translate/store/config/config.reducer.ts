@@ -1,6 +1,6 @@
-import { formsActions } from './store.actions';
+import { formsActions } from './config.actions';
 import { createFeature, createReducer, createSelector, on } from '@ngrx/store';
-import { IStore } from './store.interfaces';
+import { IStore } from './config.interfaces';
 
 export const ngrxFormsInitialState: IStore = {
   i18nData: 'vi',

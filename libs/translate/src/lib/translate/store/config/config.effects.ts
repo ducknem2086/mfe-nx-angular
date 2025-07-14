@@ -1,6 +1,6 @@
 import { inject } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { formsActions } from './store.actions';
+import { formsActions } from './config.actions';
 
 export const setData$ = createEffect(
   (actions$ = inject(Actions)) => {
