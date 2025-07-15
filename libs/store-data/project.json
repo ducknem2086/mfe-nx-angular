@@ -1,0 +1,9 @@
+{
+  "name": "store-data",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/store-data/src",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project store-data --web",
+  "targets": {}
+}
