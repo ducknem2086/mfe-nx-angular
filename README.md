@@ -6,12 +6,6 @@ registry=https://mfe-portfollio-704970334544.d.codeartifact.ap-southeast-1.amazo
 //mfe-portfollio-704970334544.d.codeartifact.ap-southeast-1.amazonaws.com/npm/npm-store/:_authToken={aws_artifact_auth_token}
 ```
 - config iam account, be like "aws configured"
-- login aws code artifact with your aws iam, then get token
-```
-aws codeartifact get-repository-endpoint 
---domain mfe-portfollio
---domain-owner 704970334544
---repository npm-store --format npm
 ```
 +  note: if that command returned error : you should used npm login to login in repository codeArtifact 
   - npm login -> login with aws iam account (user name and secret key with that IAM account)
