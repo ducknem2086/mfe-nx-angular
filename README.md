@@ -1,5 +1,4 @@
 ## Step by step to install store-data library of mfe
-# npm install @ng-mf/store-data@0.0.1
 - setup config with .npmrc file
 ```
 registry=https://mfe-portfollio-704970334544.d.codeartifact.ap-southeast-1.amazonaws.com/npm/npm-store/
@@ -20,7 +19,7 @@ aws codeartifact get-repository-endpoint
 ```
   aws codeartifact login  --tool npm --domain mfe-portfollio --domain-owner 704970334544  --repository npm-store --region ap-southeast-1
   aws codeartifact get-authorization-token --domain mfe-portfollio --domain-owner 704970334544 --query authorizationToken --output text
-  -> npm i @ng-mf/store-data with latest version 
+  npm i @ng-mf/store-data with latest version 
 ```
 - get token -> copy token to .npmrc auth token variable
 - install {aws_library} in your codeArtifact library from domain (example: npm install @ng-mf/store-data@0.0.1)
