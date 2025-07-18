@@ -2,7 +2,7 @@ import { Component, effect, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { Store } from '@ngrx/store';
-import { formsActions, ngrxFormsFeature } from '@ng-mf/translate';
+import { formsActions, ngrxFormsFeature } from '@ng-mf/store-data';
 
 @Component({
   selector: 'app-page2',
@@ -22,7 +22,6 @@ export class Page2 {
 
   constructor() {
     this.setI18nStatusData(false);
-
     this.translate.setDefaultLang('en');
     effect(() => {
       this.translate.use(this.i18nStatus());
