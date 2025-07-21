@@ -39,4 +39,7 @@ registry=https://mfe-portfollio-704970334544.d.codeartifact.ap-southeast-1.amazo
   Alternatively, the JIT compiler should be loaded by bootstrapping using '@angular/platform-browser-dynamic' or '@angular/platform-server',
   or manually provide the compiler with 'import "@angular/compiler";' before bootstrapping.
       at 2318 (page1.ts:6:25)
-
+```
+-> lỗi này là có thể do 2 case sau :
+- import thư viện nhưng thư viện không đọc được
+- import thư viện nhưng trỏ sai path
