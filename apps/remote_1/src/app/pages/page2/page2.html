@@ -1,3 +1,6 @@
 <p>page2 works!</p>
 <h3>{{ 'hello' | translate }}</h3>
-<button (click)="toggleLang()">EN/VI : {{i18nStatus()}}</button>
+<button (click)="toggleLang()">EN/VI : {{ i18nStatus() }}</button>
+<p id="colorValue">Selected Color: {{ selectedColor() }}</p>
+<input type="color" id="colorPicker" value="#ff0000" #inputPicker />
+

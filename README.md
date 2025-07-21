@@ -17,15 +17,10 @@ registry=https://mfe-portfollio-704970334544.d.codeartifact.ap-southeast-1.amazo
 - get token -> copy token to .npmrc auth token variable
 - install {aws_library} in your codeArtifact library from domain (example: npm install @ng-mf/store-data@0.0.1)
 
-
-
 ## my portfollio mfe architecture 
 
 
 ![alt text](https://github.com/ducknem2086/mfe-nx-angular/blob/master/apps/dashboard/public/img.png "mfe.img")
-
-
-
 
 
 # error when implemented lib store - how to fix : 
