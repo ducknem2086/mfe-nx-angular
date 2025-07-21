@@ -9,7 +9,8 @@ import { provideRouter } from '@angular/router';
 import { appRoutes } from './app.routes';
 import { provideHttpClient } from '@angular/common/http';
 import { GlobalErrorHandler } from '../error-handler';
-import { TranslateLibModule } from '@ng-mf/translate';
+import { provideStore } from '@ngrx/store';
+import { provideEffects } from '@ngrx/effects';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -18,9 +19,8 @@ export const appConfig: ApplicationConfig = {
       provide: ErrorHandler,
       useClass: GlobalErrorHandler
     },
-    importProvidersFrom([
-      TranslateLibModule
-    ]),
+    provideEffects(),
+    provideStore(),
     provideBrowserGlobalErrorListeners(),
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(appRoutes)

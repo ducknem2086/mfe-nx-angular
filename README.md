@@ -23,3 +23,20 @@ registry=https://mfe-portfollio-704970334544.d.codeartifact.ap-southeast-1.amazo
 
 
 ![alt text](https://github.com/ducknem2086/mfe-nx-angular/blob/master/apps/dashboard/public/img.png "mfe.img")
+
+
+
+
+
+# error when implemented lib store - how to fix : 
+```
+  apps_remote_1_src_ap…ntry_routes_ts.js:1 ERROR Error: The injectable 'Di' needs to be compiled using the JIT compiler, but '@angular/compiler' is not available.
+  
+  The injectable is part of a library that has been partially compiled.
+  However, the Angular Linker has not processed the library such that JIT compilation is used as fallback.
+  
+  Ideally, the library is processed using the Angular Linker to become fully AOT compiled.
+  Alternatively, the JIT compiler should be loaded by bootstrapping using '@angular/platform-browser-dynamic' or '@angular/platform-server',
+  or manually provide the compiler with 'import "@angular/compiler";' before bootstrapping.
+      at 2318 (page1.ts:6:25)
+
