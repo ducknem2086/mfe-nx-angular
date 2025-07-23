@@ -16,7 +16,6 @@
     "baseUrl": ".",
     "paths": {
       "@dashboard": ["apps/dashboard"],
-      "@ng-mf/share-ui-lib": ["libs/share-ui-lib/src/index.ts"],
       "@ng-mf/ngrx-store-lib": ["libs/ngrx-lib-store/src/index.ts"],
       "remote_1/Routes": ["apps/remote_1/src/app/remote-entry/entry.routes.ts"],
       "remote_2/Routes": ["apps/remote_2/src/app/remote-entry/entry.routes.ts"]

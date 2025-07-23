@@ -1,6 +1,16 @@
 <p>page2 works!</p>
 <h3>{{ 'hello' | translate }}</h3>
 <button (click)="toggleLang()">EN/VI : {{ i18nStatus() }}</button>
-<p id="colorValue">Selected Color: {{ selectedColor() }}</p>
-<input type="color" id="colorPicker" value="#ff0000" #inputPicker />
+<p class="colorValue">Selected primaryColor: {{ primaryColor() }}</p>
+<input type="color" id="primary" value="#ff0000" #primary />
+<p class="colorValue">Selected warning : {{ primaryColor() }}</p>
+<input type="color" id="warning" value="#ff0000" #warning />
+<p class="colorValue">Selected 2nd : {{ primaryColor() }}</p>
+<input type="color" id="2ndColor" value="#ff0000" #2ndColor />
+<p class="colorValue">Selected background color: {{ primaryColor() }}</p>
+<input type="color" id="bgColor" value="#ff0000" #bgColor />
+<p class="colorValue">Selected error Color : {{ primaryColor() }}</p>
+<input type="color" id="errorColor" value="#ff0000" #errorColor />
+
+
 

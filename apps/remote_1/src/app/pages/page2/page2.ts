@@ -1,6 +1,7 @@
 import {
   AfterViewInit,
   Component,
+  computed,
   effect,
   ElementRef,
   inject,
@@ -13,8 +14,8 @@ import { Store } from '@ngrx/store';
 import {
   configActions,
   ngrxConfigFeature,
+  ngrxThemeFeature,
   ThemeAction,
-  themeConfigState,
 } from '@ng-mf/ngrx-store-lib';
 import { FormsModule } from '@angular/forms';
 import { debounceTime, exhaustMap, fromEvent, map, of, tap } from 'rxjs';
@@ -28,19 +29,39 @@ import { debounceTime, exhaustMap, fromEvent, map, of, tap } from 'rxjs';
   standalone: true,
 })
 export class Page2 implements AfterViewInit {
+  selectedColor = signal('');
   protected translate = inject(TranslateService);
+  protected primaryPicker = viewChild<ElementRef>('primary');
+  protected warningPicker = viewChild<ElementRef>('warning');
+  protected ndColorPicker = viewChild<ElementRef>('2ndColor');
+  protected bgColorPicker = viewChild<ElementRef>('bgColor');
+  protected errorColorPicker = viewChild<ElementRef>('errorColor');
+
   private readonly store = inject(Store);
-
-  protected inputPicker = viewChild<ElementRef>('inputPicker');
-
   readonly i18nStatus = this.store.selectSignal(
     ngrxConfigFeature.selectI18nData
   );
-
-  readonly primaryColorStatus = this.store.selectSignal(
-    themeConfigState.selec
+  readonly themeColor = this.store.selectSignal(
+    ngrxThemeFeature.selectThemeColor
   );
-  selectedColor = signal('');
+  primaryColor = computed(() => {
+    return this.themeColor().primary;
+  });
+  errorColor = computed(() => {
+    return this.themeColor().error;
+  });
+  secondColor = computed(() => {
+    return this.themeColor().secondary;
+  });
+  backgroundColor = computed(() => {
+    return this.themeColor().background;
+  });
+  warningColor = computed(() => {
+    return this.themeColor().warning;
+  });
+
+
+
 
   constructor() {
     this.setI18nStatusData(false);
@@ -51,7 +72,7 @@ export class Page2 implements AfterViewInit {
   }
 
   ngAfterViewInit() {
-    fromEvent<InputEvent>(this.inputPicker()?.nativeElement, 'change')
+    fromEvent<InputEvent>(this.primaryPicker()?.nativeElement, 'change')
       .pipe(
         map((event) => (event.target as HTMLInputElement).value),
         debounceTime(150), // Wait 150ms after last change
